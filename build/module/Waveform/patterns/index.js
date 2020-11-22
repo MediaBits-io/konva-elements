@@ -1,0 +1,14 @@
+import * as d3 from 'd3';
+import barsPattern from './bars';
+import filledPath from './filledPath';
+import strokedPath from './strokedPath';
+const patterns = {
+    wave: filledPath(d3.curveCardinal.tension(0.1)),
+    pixel: filledPath(d3.curveStep),
+    bars: barsPattern(),
+    roundBars: barsPattern(true),
+    line: strokedPath(),
+    curve: strokedPath(d3.curveCardinal.tension(0.1)),
+};
+export default patterns;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvV2F2ZWZvcm0vcGF0dGVybnMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxLQUFLLEVBQUUsTUFBTSxJQUFJLENBQUM7QUFDekIsT0FBTyxXQUFXLE1BQU0sUUFBUSxDQUFDO0FBQ2pDLE9BQU8sVUFBVSxNQUFNLGNBQWMsQ0FBQztBQUN0QyxPQUFPLFdBQVcsTUFBTSxlQUFlLENBQUM7QUFFeEMsTUFBTSxRQUFRLEdBQUc7SUFDZixJQUFJLEVBQUUsVUFBVSxDQUFDLEVBQUUsQ0FBQyxhQUFhLENBQUMsT0FBTyxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQy9DLEtBQUssRUFBRSxVQUFVLENBQUMsRUFBRSxDQUFDLFNBQVMsQ0FBQztJQUMvQixJQUFJLEVBQUUsV0FBVyxFQUFFO0lBQ25CLFNBQVMsRUFBRSxXQUFXLENBQUMsSUFBSSxDQUFDO0lBQzVCLElBQUksRUFBRSxXQUFXLEVBQUU7SUFDbkIsS0FBSyxFQUFFLFdBQVcsQ0FBQyxFQUFFLENBQUMsYUFBYSxDQUFDLE9BQU8sQ0FBQyxHQUFHLENBQUMsQ0FBQztDQUNsRCxDQUFDO0FBRUYsZUFBZSxRQUFRLENBQUMifQ==
