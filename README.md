@@ -28,3 +28,7 @@ Props:
 - `backgroundColor` - color of area between progress and max
 - `fill` - color of area between 0 and progress
 - other `Konva.Group` element props
+
+```
+<ProgressBar progress={4} max={10} />
+```
