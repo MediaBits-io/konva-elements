@@ -50,8 +50,7 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "d3": "^5.16.0",
-    "fabric": "^3.6.3",
+    "d3": "^6.2.0",
     "konva": "^7.1.9",
     "react-konva": "^17.0.0-0"
   },
@@ -59,24 +58,23 @@
     "@bitjson/npm-scripts-info": "^1.0.0",
     "@bitjson/typedoc": "^0.15.0-0",
     "@istanbuljs/nyc-config-typescript": "^0.1.3",
-    "@types/d3": "^5.7.2",
-    "@types/fabric": "^3.6.8",
+    "@types/d3": "^6.2.0",
     "@types/react": "^17.0.0",
-    "ava": "^2.2.0",
-    "codecov": "^3.5.0",
-    "cz-conventional-changelog": "^2.1.0",
+    "ava": "^2.4.0",
+    "codecov": "^3.8.1",
+    "cz-conventional-changelog": "^3.3.0",
     "gh-pages": "^2.0.1",
     "npm-run-all": "^4.1.5",
     "nyc": "^14.1.1",
     "open-cli": "^5.0.0",
     "prettier": "^1.19.1",
     "react": "^17.0.1",
-    "standard-version": "^6.0.1",
+    "standard-version": "^9.0.0",
     "trash-cli": "^3.0.0",
-    "tslint": "^5.20.1",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
-    "typescript": "^3.9.7"
+    "typescript": "^4.1.2"
   },
   "peerDependencies": {
     "react": "^17.0.1"
