@@ -65,4 +65,4 @@ export default [
     [0.7256145276771857, -0.769788681948424],
     [0.81496489864539, 0.03895057306590258]
   ]
-] as Array<Array<[number, number]>>;
+] as [number, number][][];

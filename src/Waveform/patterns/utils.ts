@@ -4,5 +4,5 @@ export interface WaveformProperties {
   waveLeft: number;
   waveRight: number;
   waveColor: string;
-  data: Array<[number, number]>;
+  data: [number, number][];
 }
