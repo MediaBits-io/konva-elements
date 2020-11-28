@@ -28,7 +28,7 @@ const getPadding = (type: PatternType): { v: number; h: number } => {
   }
 };
 
-export interface WaveformConfig extends Konva.NodeConfig {
+export interface WaveformConfig extends Konva.ShapeConfig {
   frame?: number;
   frames?: [number, number][][];
   pattern?: PatternType;

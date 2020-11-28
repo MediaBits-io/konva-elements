@@ -2,7 +2,7 @@ import Konva from 'konva';
 import React, { forwardRef, useEffect, useRef } from 'react';
 import { Group, KonvaNodeEvents, Rect } from 'react-konva';
 
-export type ProgressBarConfig = Konva.NodeConfig & {
+export type ProgressBarConfig = Konva.ShapeConfig & {
   animated?: boolean;
   backgroundColor?: string;
   progress: number;

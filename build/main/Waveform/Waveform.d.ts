@@ -3,9 +3,9 @@ import React from 'react';
 import { KonvaNodeEvents } from 'react-konva';
 import patterns from './patterns';
 export declare type PatternType = keyof typeof patterns;
-export interface WaveformConfig extends Konva.NodeConfig {
+export interface WaveformConfig extends Konva.ShapeConfig {
     frame?: number;
-    frames?: Array<Array<[number, number]>>;
+    frames?: [number, number][][];
     pattern?: PatternType;
     fill?: string;
     animated?: boolean;
