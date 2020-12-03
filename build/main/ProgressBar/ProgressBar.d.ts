@@ -12,5 +12,5 @@ declare const ProgressBar: React.ForwardRefExoticComponent<Pick<import("konva/ty
     backgroundColor?: string | undefined;
     progress: number;
     max: number;
-} & KonvaNodeEvents, string | number> & React.RefAttributes<import("konva/types/Group").Group>>;
+} & KonvaNodeEvents, React.ReactText> & React.RefAttributes<import("konva/types/Group").Group>>;
 export default ProgressBar;

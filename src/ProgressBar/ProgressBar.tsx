@@ -56,7 +56,7 @@ const ProgressBar = forwardRef<
     }, [animated]);
 
     return (
-      <Group ref={ref} width={width} height={height} {...rest}>
+      <Group {...rest} ref={ref} width={width} height={height}>
         <Rect width={width} height={height} fill={backgroundColor} />
         <Rect
           ref={progressRectRef}

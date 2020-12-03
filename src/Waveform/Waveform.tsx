@@ -101,11 +101,11 @@ const Waveform = forwardRef<Konva.Shape, WaveformConfig & KonvaNodeEvents>(
 
     return (
       <Shape
+        {...rest}
         ref={shapeRef}
         width={width}
         height={height}
         sceneFunc={drawShape}
-        {...rest}
       />
     );
   }
