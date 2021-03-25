@@ -1,6 +1,6 @@
 import Konva from 'konva';
-import React, { forwardRef, useEffect, useRef } from 'react';
-import { Group, KonvaNodeEvents, Rect } from 'react-konva';
+import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
+import { Group, KonvaNodeEvents, Rect, Shape } from 'react-konva';
 
 export type ProgressBarConfig = Konva.ShapeConfig & {
   animated?: boolean;
@@ -35,12 +35,6 @@ const ProgressBar = forwardRef<
       }
 
       const animation = new Konva.Animation(() => {
-        if (progressRectRef.current) {
-          progressRectRef.current.width(
-            width * (max > 0 ? frameRef.current / max : 0)
-          );
-        }
-
         if (frameRef.current < max) {
           frameRef.current += 1;
         } else {
@@ -55,6 +49,14 @@ const ProgressBar = forwardRef<
       };
     }, [animated]);
 
+    const drawShape = useCallback(() => {
+      if (progressRectRef.current) {
+        progressRectRef.current.width(
+          width * (max > 0 ? frameRef.current / max : 0)
+        );
+      }
+    }, []);
+
     return (
       <Group {...rest} ref={ref} width={width} height={height}>
         <Rect width={width} height={height} fill={backgroundColor} />
@@ -64,6 +66,7 @@ const ProgressBar = forwardRef<
           height={height}
           fill={fill}
         />
+        <Shape width={0} height={0} sceneFunc={drawShape} />
       </Group>
     );
   }
