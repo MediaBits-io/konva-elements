@@ -1,5 +1,5 @@
 import Konva from 'konva';
-import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import { KonvaNodeEvents, Shape } from 'react-konva';
 import patterns from './patterns';
 import sampleFrames from './sampleFrames';
@@ -50,28 +50,7 @@ const Waveform = forwardRef<Konva.Shape, WaveformConfig & KonvaNodeEvents>(
     },
     ref
   ) => {
-    const frameRef = useRef(frame);
     const shapeRef = useSyncedRef(ref);
-
-    useEffect(() => {
-      if (!animated || !shapeRef.current) {
-        return;
-      }
-
-      const animation = new Konva.Animation(() => {
-        if (frameRef.current < frames.length - 1) {
-          frameRef.current += 1;
-        } else {
-          animation.stop();
-        }
-      }, [shapeRef.current.getLayer()]);
-
-      animation.start();
-
-      return () => {
-        animation.stop();
-      };
-    }, [animated]);
 
     const drawShape = useCallback(
       (ctx: Konva.Context, shape: Konva.Shape) => {
@@ -84,7 +63,7 @@ const Waveform = forwardRef<Konva.Shape, WaveformConfig & KonvaNodeEvents>(
         const waveBottom = waveTop + waveHeight;
 
         patterns[pattern](ctx._context, {
-          data: frames[frameRef.current],
+          data: frames[animated ? (window as any)._frame : frame],
           waveLeft,
           waveTop,
           waveRight,
@@ -96,12 +75,13 @@ const Waveform = forwardRef<Konva.Shape, WaveformConfig & KonvaNodeEvents>(
         ctx.rect(0, 0, width, height);
         ctx.fillStrokeShape(shape);
       },
-      [fill, frame, frames, height, pattern, width]
+      [fill, animated, frame, frames, height, pattern, width]
     );
 
     return (
       <Shape
         {...rest}
+        frame={frame}
         ref={shapeRef}
         width={width}
         height={height}
